@@ -3,15 +3,15 @@
 
 {% include head.html %}
 
-<body>
-    
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
     <div class="page-wrap">
         {% include header.html %}
         <main>
             {{ content }}
         </main>
     </div>
-    
+
     {% include footer.html %}
 
     <script src="/assets/js/vendor/jquery.min.js"></script>
