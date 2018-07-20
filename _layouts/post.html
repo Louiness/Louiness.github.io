@@ -7,8 +7,8 @@ layout: default
         <span class="date">
             {{ page.date | date_to_string }}
             <!-- {% if page.category %}
-                in <i>{{ page.categories }}</i> 
-            {% endif %} -->
+                in <i>{{ page.categories }}</i>
+            {% endif %}
         </span>
         <h1 class="post-title">{{ page.title }}</h1>
     </center>
@@ -49,5 +49,5 @@ layout: default
   <br>
 
     {% include author.html %}
-    <!-- {% include disqus.html %} -->
+    {% include disqus.html %}
 </div>
