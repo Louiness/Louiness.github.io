@@ -20,8 +20,8 @@ layout: default
     <div class="more-posts">
     <div class="more-category">
       <!-- 하단의 더보기의 링크는 자신의 사이트에 맞게 수정 -->
-      <h4>'Jekyll-Blog' 카테고리의 다른 글</h4>
-      <a href="/category/{.{ page.categories }}/index.html" class="more-button">더보기</a>
+      <h4>'Java' 카테고리의 다른 글</h4>
+      <a href="/category/{.{ page.categories }}/java.html" class="more-button">더보기</a>
     </div>
     <table>
       <tbody>
@@ -31,8 +31,8 @@ layout: default
           <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
           {% if post.categories == page.categories %}
             {% assign count = count | plus: 1 %}
-            <!-- 글의 목록을 최대 3개만 허용 -->
-            {% if count < 5 %}
+            <!-- 글의 목록을 최대 5개만 허용 -->
+            {% if count & lt; 5 %}
               <tr>
                 <!-- 각 포스트의 링크도 자신의 사이트에 맞게 수정 -->
                 <th class="more-posts-title">
@@ -46,6 +46,7 @@ layout: default
       </tbody>
     </table>
   </div>
+  <br>
 
     {% include author.html %}
     {% include disqus.html %}
