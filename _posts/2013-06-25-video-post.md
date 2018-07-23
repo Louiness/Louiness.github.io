@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Post with a Video"
+title: "유튜브 등록 방법"
 description: "Custom written post descriptions are the way to go... if you're not lazy."
 tags: [sample post, video]
 author: Abhishek
