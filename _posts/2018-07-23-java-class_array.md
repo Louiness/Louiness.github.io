@@ -59,4 +59,4 @@ public class StudentLexiMain {
 ```
 
 실행시킨 결과는 다음과 같다.
-(./assets/img/object_array.jpg)
+(/assets/img/object_array.jpg)
