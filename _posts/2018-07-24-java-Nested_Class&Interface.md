@@ -52,3 +52,5 @@ class ClassName{
 <td>method()가 실행할 때만 사용할 수 있는 B 중첩 클래스</td>
 </tr>
 </table>
+
+참조 : 이것이 자바다.(한빛미디어)
