@@ -15,7 +15,7 @@ category: java
   * 특정 필드와 메소드를 숨김 처리(필드와 메소드 제한)
 
 + **접근 제한자의 종류**
-<table>
+<table border="1">
 <tr>
 <th>접근 제한</th>
 <th>적용 대상</th>
