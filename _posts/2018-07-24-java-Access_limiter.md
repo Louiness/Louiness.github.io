@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "java 객체 배열 생성 방법"
+title: "접근 제한자 public, protected, static, default"
 tags: [자바, 자바 꿀팁,자바 tip, 자바 기본, 이클립스, 이클립스 tip, 자바 기초, 접근 제한자, public, protected, static, default, 자바 접근 제한자, 자바 public, 자바 제한자]
 category: java
 ---

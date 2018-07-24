@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "java 객체 배열 생성 방법"
+title: "객체 배열"
 tags: [자바, 자바 꿀팁,자바 tip, 자바 기본, 이클립스, 이클립스 tip, 자바 기초, 클래스 배열, 자바 클래스 배열, 객체 배열]
 category: java
 ---
