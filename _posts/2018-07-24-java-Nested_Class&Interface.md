@@ -41,7 +41,6 @@ class ClassName{
 <td>A 객체를 생성해야만 사용할 수 있는 B 중첩 클래스</td>
 </tr>
 <tr>
-<td></td>
 <td>정적 멤버 클래스</td>
 <td>```java class A{   static class B { ... } } ```</td>
 <td>A 클래스로 바로 접근할 수 있는 B 중첩 클래스</td>
