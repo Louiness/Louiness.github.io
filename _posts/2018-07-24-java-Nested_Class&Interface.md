@@ -42,14 +42,21 @@ class ClassName{
 </tr>
 <tr>
 <td>정적 멤버 클래스</td>
-<td>```java class A{   static class B { ... } } ```</td>
+<td>class A{
+     static class B { ... } 
+    }</td>
 <td>A 클래스로 바로 접근할 수 있는 B 중첩 클래스</td>
 </tr>
 <tr>
 <td colspan = "2">로컬 클래스</td>
-<td>```java class A{   void method(){     class B { ... }   } } ```</td>
+<td>class A{
+      void method(){
+        class B { ... }
+      }
+    }
+ </td>
 <td>method()가 실행할 때만 사용할 수 있는 B 중첩 클래스</td>
 </tr>
 </table>
 
-참조 : 이것이 자바다.(한빛미디어)
+참조 : 이것이 자바다(한빛미디어)
