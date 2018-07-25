@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "new와 getInstance의 차이"
+title: "상속(Inheritance)"
 tags: [자바, 자바 꿀팁,자바 tip, 자바 기본, 이클립스, 이클립스 tip, 자바 기초, Inheritance, 자바 상속, 상속]
 category: java
 ---
