@@ -84,7 +84,9 @@ public class E028Case1 {
 ```
 
 실행시킨 결과는 다음과 같다.
+
 ![Inheritance](/assets/img/Inheritance_Example.JPG)
+
 
 
 ### ※ 자바는 단일 상속 - 부모 클래스 나열 불가
@@ -92,6 +94,7 @@ class 자식클래스 extends 부모클래스 1, ~~부모클래스 2~~{
 ---
 
 
+  
 ## 메소드 재정의(@Override)
 ---
 * 부모 클래스의 상속 메소드 수정해 자식 클래스에서 재정의 하는 것
