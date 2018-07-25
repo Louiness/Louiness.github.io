@@ -34,7 +34,7 @@ layout: default
           {% if post.categories == page.categories %}
             {% assign count = count | plus: 1 %}
             <!-- 글의 목록을 최대 5개만 허용 -->
-            {% if count < 5 %}
+            {% if count < 6 %}
               <tr>
                 <!-- 각 포스트의 링크도 자신의 사이트에 맞게 수정 -->
                 <th class="more-posts-title">
