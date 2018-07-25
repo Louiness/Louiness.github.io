@@ -38,6 +38,7 @@ public class E028Car {
 }
 ```
 
+---
 ```java
 package hasu;
 //자식 클래스
@@ -47,6 +48,7 @@ public class E028Bus extends E028Car {
 }
 ```
 
+---
 ```java
 package hasu;
 
@@ -80,6 +82,9 @@ public class E028Case1 {
 
 }
 ```
+
+실행시킨 결과는 다음과 같다.
+![Inheritance](/assets/img/Inheritance_Example.JPG)
 
 
 ### ※ 자바는 단일 상속 - 부모 클래스 나열 불가
