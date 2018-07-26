@@ -10,20 +10,20 @@ category: java
   * 두 클래스의 멤버들을 서로 쉽게 접근할 수 있다
   * 외부의 불필요한 관계 클래스를 감춤으로써 코드의 복잡성을 줄일 수 있다
 
-<pre class="line-numbers"><code class="language-java">
+```java
 //중첩 클래스의 코드 형태
 class ClassName{
   class NestdClassName{ }
 }
-</code></pre>
+```
 
 인터페이스도 클래스 내부에 선언할 수 있다. 이런 인터페이스를 **중첩 인터페이스** 라고 한다.
 인터페이스를 클래스 내부에 선언하는 이유는 해당 클래스와 긴밀한 관계를 맺는 구현 클래스를 만들기 위해서이다.
-<pre class="line-numbers"><code class="language-java">
+```java
 class ClassName{
   interface NestedInterfaceName{ }
 }
-</code></pre>
+```
 
 
 중첩 클래스는 클래스 내부에 선언되는 위치에 따라서 두 가지로 분류된다. 클래스의 멤버로서 선언되는 중첩 클래스를 **멤버 클래스** 라고 하고, 메소드 내부에서 선왼든 중첩클래스를 **로컬 클래스** 라고 한다. 멤버 클래스는 클래스나 객체가 사용 중이라면 언제든지 재사용이 가능하지, 로컬 클래스는 메소드 실행 시에만 사용되고, 메소드가 실행 종료되면 없어진다.
@@ -37,17 +37,17 @@ class ClassName{
 <tr>
 <td rowspan = "2">멤버클래스</td>
 <td>인스턴스 멤버 클래스</td>
-<td><pre>class A{<br>    class B { ... }<br>}</code></pre></td>
+<td><pre>class A{<br>    class B { ... }<br>}```</td>
 <td>A 객체를 생성해야만 사용할 수 있는 B 중첩 클래스</td>
 </tr>
 <tr>
 <td>정적 멤버 클래스</td>
-<td><pre>class A{<br>    static class B { ... }<br>}</code></pre></td>
+<td><pre>class A{<br>    static class B { ... }<br>}```</td>
 <td>A 클래스로 바로 접근할 수 있는 B 중첩 클래스</td>
 </tr>
 <tr>
 <td colspan = "2">로컬 클래스</td>
-<td><pre>class A{<br>    void method(){<br>    class B { ... }<br>    }<br>}</code></pre></td>
+<td><pre>class A{<br>    void method(){<br>    class B { ... }<br>    }<br>}```</td>
 <td>method()가 실행할 때만 사용할 수 있는 B 중첩 클래스</td>
 </tr>
 </table>

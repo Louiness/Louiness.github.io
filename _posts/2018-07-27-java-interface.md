@@ -14,9 +14,9 @@ category: java
 인터페이스는 하나의 객체가 아니라 여러 객체들과 사용이 가능하므로 어떤 객체를 사용하느냐에 따라서 실행 내용과 리턴값이 다를 수 있다.
 
 
-<pre class="line-numbers"><code class="language-java">
+```java
 [ public ] interface 인터페이스명 { ... }
-</code></pre>
+```
 
 
 인터페이스 이름은 클래스 이름을 작성하는 방법과 *동일* 하다. **영어 대소문자를 구분** 하며 첫 문자를 **대문자** 로 하고 나머지는 소문자로 작성하는 것이 관례이다.
@@ -25,7 +25,7 @@ category: java
 
 인터페이스는 **상수와 메소드만을 구성 멤버로 가진다**. 인터페이스는 객체로 생성할 수 없기 때문에 생성자를 가질 수 없다. 자바 7까지는 인터페이스의 메소드는 실행 블록이 없는 추상 메소드로만 선언이 가능햇지만, 자바 8부터는 디폴트 메소드와 정적 메소드도 선언이 가능하다.
 
-<pre class="line-numbers"><code class="language-java">
+```java
 interface 인터페이스명 {
   //상수
   타입 상수명 = 값;
@@ -39,7 +39,7 @@ interface 인터페이스명 {
   //정적 메소드
   static 타입 메소드명(매개변수) { ... }
 }
-</code></pre>
+```
 
 
 
@@ -81,27 +81,27 @@ interface 인터페이스명 {
 
 
 
-<pre class="line-numbers"><code class="language-java">
+```java
 public interface RemoteControl {
   public int MAX_VOLUME = 10;
   public int MIN_VOLUME = 0;
 }
-</code></pre>
+```
 
 
 
 ## 추상 메소드 선언
 ---
-<pre class="line-numbers"><code class="language-java">
+```java
 [ public abstract ]리턴타입 메소드명(매개변수, ...);
-</code></pre>
+```
 
 
 
 인터페이스를 통해 호출된 메소드는 **최종적으로 객체에서 실행** 된다. 그렇기 때문에 인터페이스의 메소드는 실행 블록이 필요 없는 추상 메소드로 선언한다. 인터페이스에 선언된 추상 메소드는 모두 public abstract의 특성을 갖기 떄문에 public abstract를 생략하더라도 자동적으로 컴파일 과정에서 붙게 된다.
 
 
-<pre class="line-numbers"><code class="language-java">
+```java
 public interface RemoteControl {
   //상수
   public int MAX_VOLUME = 10;
@@ -112,7 +112,7 @@ public interface RemoteControl {
   public void turnOff();
   public void setVolume(int volume);
 }
-</code></pre>
+```
 
 
 
@@ -121,13 +121,13 @@ public interface RemoteControl {
 ---
 <pre class="prttyprint">
 [ public ] default 리턴타입 메소드명(매개변수, ...) { ... }
-</code></pre>
+```
 
 
 형태는 클래스의 인스턴스 메소드와 동일하지만, default 키ㅝ드가 리턴 타입 앞에 붙는다. 디폴트 메소드는 public 특성을 갖기 때문에 public을 생략하더라도 자동적으로 컴파일 과정에서 붙게 된다.
 
 
-<pre class="line-numbers"><code class="language-java">
+```java
 public interface RemoteControl {
   //상수
   public int MAX_VOLUME = 10;
@@ -147,23 +147,23 @@ public interface RemoteControl {
     }
   }
 }
-</code></pre>
+```
 
 
 
 
 ## 정적 메소드 선언
 ---
-<pre class="line-numbers"><code class="language-java">
+```java
 [ public ] static 리턴타입 메소드명(매개변수, ...) { ... }
-</code></pre>
+```
 
 
 클래스의 정적 메소드와 완전 동일하다. 정적 메소드는 public 특성을 갖기 때문에 public을 생략하더라도 자동적으로 컴파일 과정에서 붙게 된다.
 
 
 
-<pre class="line-numbers"><code class="language-java">
+```java
 public interface RemoteControl {
   //상수
   public int MAX_VOLUME = 10;
@@ -188,7 +188,7 @@ public interface RemoteControl {
     System.out.println("건전지를 교환합니다.");
   }
 }
-</code></pre>
+```
 
 
 
@@ -204,11 +204,11 @@ public interface RemoteControl {
 ### 구현 클래스
 
 
-<pre class="line-numbers"><code class="language-java">
+```java
 public class 구현클래스명 implements 인터페이스명 {
   //인터페이스에 선언된 추상 메소드의 실체 메소드 선언
 }
-</code></pre>
+```
 
 
 인터페이스를 사용하기 위해선 위와 같은 implements를 클래스옆에 붙여주어야 한다.
@@ -246,7 +246,7 @@ public class Television implements RemoteControl {
 	}
 
 }
-</code></pre>
+```
 
 
 <pre class="line-numbers" name="Audio.java"><code class="language-java">
@@ -275,7 +275,7 @@ public class Audio implements RemoteControl{
 	}
 
 }
-</code></pre>
+```
 
 
 
@@ -289,7 +289,7 @@ public class RemoteControlExample {
 	}
 
 }
-</code></pre>
+```
 
 
 
@@ -300,16 +300,16 @@ public class RemoteControlExample {
 구현 클래스를 만들어 사용하는 것이 일반적이고, 클래스를 재사용할 수 있기 때문에 편리하지만, 일회성의 구현 객체를 만들기 위해 소스 파일을 만들고 클래스를 선언하는 것은 비효율적이다. 자바는 소스 파일을 만들지 않고도 구현 객체를 만들 수 있는 방법을 제공하는데, 그것이 익명 구현 객체이다.
 
 
-<pre class="line-numbers"><code class="language-java">
+```java
 인터페이스 변수 = new 인터페이스() {
   //인터페이스에 선언된 추상 메소드의 실체 메소드 선언
 };
-</code></pre>
+```
 
 익명 구현 객체를 생성해서 인터페이스 변수에 대입하는 코드이다. 작성 시 주의할 점은 하나의 실행문이므로 끝에는 세미코론(;)을 반드시 붙여야 한다.
 new 연산자 뒤에는 클래스 이름이 와야 하는데, 이름이 없다. 인터페이스() {}는 인터페이스를 구현해서 중괄호 {}와 같이 클래스를 선언하라는 뜻이고, new 연산자는 이렇게 선언된 클래스를 객체로 생성한다. 중괄호 {}에는 인터페이스에 선언된 모든 추상 메소드들의 실체 메소드를 작성해야 한다. 그렇지 않으면 **컴파일 에러** 가 발생한다.
 다음은 RemoteControl의 익명 구현 객체를 만들어 본 것이다.
-<pre class="line-numbers"><code class="language-java">
+```java
 public class RemoteControlExample {
   public static void main(String[] args) {
     RemoteControl rc = new RemoteControl() {
@@ -319,7 +319,7 @@ public class RemoteControlExample {
     };
   }
 }
-</code></pre>
+```
 
 
 
@@ -327,28 +327,28 @@ public class RemoteControlExample {
 
 ### 다중 인터페이스 구현 클래스
 인터페이스 A와 인터페이스 B가 객체의 메소드를 호출할 수 있으려면 객체는 이 두 인터페이스를 모두 구현해야 한다. 따라서 구현 클래스는 다음과 같이 작성되어야 한다.
-<pre class="line-numbers"><code class="language-java">
+```java
 public class 구현클래스명 implements 인터페이스A, 인터페이스B {
   //인터페이스 A에 선언된 추상 메소드의 실체 메소드 선언
   //인터페이스 B에 선언된 추상 메소드의 실체 메소드 선언
 }
-</code></pre>
+```
 
 
 다중 인터페이스를 구현할 경우, 구현 클래스는 모든 인터페이스의 추상 메소드에 대해 실체 메소드를 작성해야 한다. 만약 하나라도 없으면 추상 클래스로 선언해야 한다.
 
 
 
-<pre class="line-numbers"><code class="language-java">
+```java
 public interface Searchable {
   void search(String url);
 }
-</code></pre>
+```
 
 
 
 
-<pre class="line-numbers"><code class="language-java">
+```java
 public class SmartTelevision implements RemoteControl, Searchable {
   private int volume;
 
@@ -373,7 +373,7 @@ public class SmartTelevision implements RemoteControl, Searchable {
     System.out.println(url + "을 검색합니다.");
   }
 }
-</code></pre>
+```
 
 
 
@@ -382,16 +382,16 @@ public class SmartTelevision implements RemoteControl, Searchable {
 
 
 인터페이스로 구현 객체를 사용하려면 다음과 같이 인터페이스 변수를 선언하고 구현 객체를 대입해야 한다. 인터페이스 변수는 참조타입이기 때문에 구현 객체가 대입될 경우 구현 객체의 번지를 저장한다.
-<pre class="line-numbers"><code class="language-java">
+```java
 RemoteControl rc;
 rc = new Television();
 rc = new Audio();
-</code></pre>
+```
 
 
 개발 코드에서 인터페이스는 클래스의 필드, 생성자 또는 메소드의 매개 변수, 생성자 또는 메소드의 로컬 변수로 선언될 수 있다.
 
-<pre class="line-numbers"><code class="language-java">
+```java
 public class MyClass {
   //필드
   RemoteControl rc = new Television();
@@ -409,7 +409,7 @@ public class MyClass {
 
   void methodB(RemoteControl rc) { ... }
 }
-</code></pre>
+```
 
 
 
@@ -422,7 +422,7 @@ public class MyClass {
 
 
 
-<pre class="line-numbers"><code class="language-java">
+```java
 public class RemoteControlExample {
   public static void main(String[] args) {
 
@@ -438,7 +438,7 @@ public class RemoteControlExample {
 
   }
 }
-</code></pre>
+```
 
 
 

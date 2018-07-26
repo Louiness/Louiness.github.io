@@ -10,12 +10,12 @@ category: java
 자식이 부모를 선택해 물려받음
 상속 대상: 부모의 필드와 메소드
 
-<pre class="line-numbers"><code class="language-java">
+```java
 public class B extends A{
 	String field2;
 void method2() { ...}
 }
-</code></pre>
+```
 
 상속의 효과
   - 부모 클래스 재사용해 자식 클래스 빨리 개발 가능
@@ -27,7 +27,7 @@ void method2() { ...}
   - 부모 클래스가 다른 패키지에 있을 경우, default접근 갖는 필드와 메소드도 제외
 
 ### Class casting
-<pre class="line-numbers"><code class="language-java">
+```java
 package hasu;
 //부모 클래스
 public class E028Car {
@@ -36,20 +36,20 @@ public class E028Car {
 
 	public int speed() { return speed; }
 }
-</code></pre>
+```
 
 ---
-<pre class="line-numbers"><code class="language-java">
+```java
 package hasu;
 //자식 클래스
 public class E028Bus extends E028Car {
 	private int passenger = 3;
 	public void move() { System.out.println("Bus 3 passenger : ==> " + passenger); }
 }
-</code></pre>
+```
 
 ---
-<pre class="line-numbers"><code class="language-java">
+```java
 package hasu;
 
 public class E028Case1 {
@@ -81,7 +81,7 @@ public class E028Case1 {
 	}
 
 }
-</code></pre>
+```
 
 실행시킨 결과는 다음과 같다.
 
@@ -107,7 +107,7 @@ class 자식클래스 extends 부모클래스 1, ~~부모클래스 2~~{
   - 새로운 예외(Exception) throws 불가
 
 ex)
-<pre class="line-numbers"><code class="language-java">
+```java
 package inherit;
 //부모 클래스
 public class Airplane {
@@ -115,8 +115,8 @@ public class Airplane {
 	public void fly() { System.out.println("일반비행합니다."); }
 	public void takeOff() { System.out.println("이륙합니다."); }
 }
-</code></pre>
-<pre class="line-numbers"><code class="language-java">
+```
+```java
 	package inherit;
 	//자식 클래스
 	public class SupersonicAirplane extends Airplane {
@@ -132,7 +132,7 @@ public class Airplane {
 			} else { super.fly(); }				//부모클래스의 메소드
 		}
 	}
-</code></pre>
+```
 
 
 ## final
