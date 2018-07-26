@@ -33,7 +33,7 @@ category: java
   - 객체가 없는 상태에서 객체를 사용하려 했으니 예외가 발생하는 것
 
 
-<pre class="line-numbers" >
+<pre class="line-numbers"><code class="language-java">
 package test;
 
 public class nullexception {
@@ -44,7 +44,7 @@ public class nullexception {
 	}
 
 }
-</pre>
+</code></pre>
 
 ![null](/assets/img/nullexception.JPG)
 
@@ -55,7 +55,7 @@ public class nullexception {
 ### 2. ArrayIndexOutOfBoundsException
 배열에서 인덱스 범위를 초과하여 사용할 경우 발생하는 실행 예외
 
-<pre class="line-numbers" >
+<pre class="line-numbers" ><code class="language-java">
 package test;
 
 public class ArrayIndexOutOfBoundsExceptionExample {
@@ -67,7 +67,7 @@ public class ArrayIndexOutOfBoundsExceptionExample {
 		a[2] = 5;
 	}
 }
-</pre>
+</code></pre>
 
 ![null](/assets/img/arrayindexexception.JPG)
 
@@ -78,7 +78,7 @@ public class ArrayIndexOutOfBoundsExceptionExample {
 ### 3. ClassCastException
 타입 변환(Casting)은 상위 클래스와 하위 클래스 간에 발생하고 구현 클래스와 인터페이스 간에도 발생한다. 이러한 관계까 아니라면 클래스는 다른 클래스로 타입 변환을 할 수 없다. 억지로 타입 변환을 시도할 경우 ClassCastException이 발생한다.
 
-<pre class="line-numbers" >
+<pre class="line-numbers"><code class="language-java">
 package test;
 
 public class ClassCastExceptionExample {
@@ -100,19 +100,19 @@ public class ClassCastExceptionExample {
 class Animal { }
 class Dog extends Animal { }
 class Cat extends Animal { }
-</pre>
+</code></pre>
 
 ![null](/assets/img/classcastexception.JPG)
 
 예제를 실행하면 14라인에서 ClassCastException이 발생한다. 그 이유는 9번째 줄에서 Cat객체를 매개값으로 주었기 때문에 Dog타입으로 변환할 수 없다. 이렇게 잘못된 매개값이 들어올 수 있기 때문에 타입 변환 전에 타입 변환이 가능한지 instanceof연산자로 확인하는 것이 좋다. instanceof 연산의 결과가 true이면 좌항 객체를 우항 타입으로 변환 가능하다는 뜻이다.
-<pre class="line-numbers" >
+<pre class="line-numbers"><code class="language-java">
 Animal animal = new Dog();
 if(animal instanceof Dog) {
   Dog dog = (Dog)animal;
 } else if(animal instanceof Cat) {
   Cat cat = (Cat)animal;
 }
-</pre>
+</code></pre>
 
 
 
@@ -128,7 +128,7 @@ if(animal instanceof Dog) {
 
 try 블록에는 예외 발생 가능 코드가 위치한다. try 블록의 코드가 예외 발생 없이 정상 실행되면 catch 블록의 코드는 실행되지 않고 finally 블록의 코드를 실행한다. 만약 try 블록의 코드에서 예외가 발생하면 **즉시 실행을 멈추고** catch블록으로 이동하여 예외 처리 코드를 실행한다. 그리고 finally 블록의 코드를 실행한다. *finally 블록은 옵션으로 생략 가능하다.*
 
-<pre class="line-numbers" >
+<pre class="line-numbers"><code class="language-java">
 public class TryCatchFinallyExample {
   public static void main(String[] args) {
     try {
@@ -138,7 +138,7 @@ public class TryCatchFinallyExample {
     }
   }
 }
-</pre>
+</code></pre>
 
 위 예제를 실행시키면 4라인에서 ClassNotFoundException이 발생하는데, 이것은 java.lang.String2 클래스가 존재하지 않기 때문이다. 4라인에서 예외가 발생하면 5라인을 실행해서 예외 처리를 하게 된다. <a href="#arrayException" class="scroll">ArrayIndexOutOfBoundsException</a>이나 <a href="#nullException" class="scroll">NullPointerException</a>, <a href="#classException" class="scroll">ClassCastException</a>과 같은 실행 예외는 컴파일러가 예외 처리 코드를 체크하지 않기 때문에 이클립스에서도 빨간 밑줄이 생기지 않는다.
 
@@ -152,7 +152,7 @@ public class TryCatchFinallyExample {
 ### 다중 catch와 cath 순서
 
 만약 하나의 try 블록에 여러 개의 catch 블록이 있다 하더라도 단 하나의 catch블록만 실행이 된다. 그 이유는 try 블록에서 동시 다발적으로 예외가 발생하지 않고, 하나의 예외가 발생하면 즉시 실행을 멈추고 해당 catch블록으로 이동하기 때문이다. 따라서 이 경우, 발생되는 예외별로 예외 처리 코드를 처리할 수 있도록 **순서대로** 다중 catch블록을 작성해 주어야 한다.
-<pre class="line-numbers" >
+<pre class="line-numbers"><code class="language-java">
 public class CatchByExceptionKindExample {
   public static void main(String[] args) {
     try {
@@ -175,7 +175,7 @@ public class CatchByExceptionKindExample {
     }
   }
 }
-</pre>
+</code></pre>
 
 ![catchbyexception](/assets/img/catchbyexception.JPG)
 
@@ -190,7 +190,7 @@ public class CatchByExceptionKindExample {
 
 ### 멀티 catch
 자바 7부터 하나의 catch 블록에서 여러 개의 예외를 처리할 수 있도록 멀티(multi) catch기능을 추가했다. catch 괄호() 안에 동일하게 처리하고 싶은 예외를 |로 연결하면 된다.
-<pre class="line-numbers" >
+<pre class="line-numbers"><code class="language-java">
 public class CatchByExceptionKindExample {
   public static void main(String[] args) {
     try {
@@ -209,7 +209,7 @@ public class CatchByExceptionKindExample {
     }
   }
 }
-</pre>
+</code></pre>
 
 
 ![multicatch](/assets/img/multicatch.JPG)
@@ -222,10 +222,10 @@ public class CatchByExceptionKindExample {
 ### 예외 떠넘기기
 
 메소드 내부에서 예외가 발생할 수 있는 코드를 작성하 때 try-catch 블록으로 예외를 처리하는 것이 기본이지만, 경우에 따라서는 메소드를 호출한 곳으로 예외를 떠넘길 수도 있다. 이때 사용하는 키워드가 **throws** 이다. throws 키워드는 메소드 선언부 끝에 작성되어 메소드에서 처리하지 않은 예외를 호출한 곳으로 떠넘기는 역할을 한다. throws 키워드 뒤에는 떠넘길 예외 클래스를 쉼표로 구분해서 나열해주면 된다.
-<pre class="line-numbers" >
+<pre class="line-numbers"><code class="language-java">
 리턴타입 메소드명(매개변수, ...) throws 예외클래스1, 예외클래스2, ... {
 }
-</pre>
+</code></pre>
 
 
 throws 키워드가 붙어있는 메소드는 반드시 try 블록 내에서 호출되어야 한다. 그리고 catch 블록에서 떠넘겨 받은 예외를 처리해야 한다.
@@ -243,7 +243,7 @@ public class ThrowsExample {
 	  Class clazz = Class.forName("java.lang.String2");
   }
 }
-</pre>
+</code></pre>
 
 
 ![throw](/assets/img/throwsexample.JPG)
@@ -258,14 +258,14 @@ main() 메소드에서도 throws 키워드를 사용해서 예외를 떠넘길 �
 
 try 블록에서 예외가 발생되면 예외 객체는 catch 블록의 매개 변수에서 참조하게 되므로 매개 변수를 이용하면 예외 객체의 정보를 알 수 있다. 모든 예외 객체는 Exception 클래스를 상속하기 때문에 Exception이 가지고 있는 메소드들을 모든 예외 객체에서 호출할 수 있다. 그 중에서도 가장 많이 사용되는 메소드는 **getMessage()** 와 **printStackTrace()** 이다. 예외를 발생시킬 때 다음과 같이 String 타입의 메시지를 갖는 생성자를 이용하였다면, 메시지는 자동적으로 예외 객체 내부에 저장된다.
 
-<pre class="line-numbers" >
+<pre class="line-numbers"><code class="language-java">
 throw new XXXException("예외 메시지");
-</pre>
+</code></pre>
 
 
 예외 메시지의 내용에는 왜 예외가 발생했는지에 대한 간단한 설명이 포함된다. 좀 더 상세한 원인을 세분화하기 위해 예외 코드를 포함하기도 하는데, 예를 들어 데이터베이스에서 발생한 오류들은 예오 코드가 예외 메시지로 전달된다. 이와 같은 예외 메시지는 다음과 같이 catch 블록에서 getMessage() 메소드의 리턴값으로 얻을 수 있다.
 
-<pre class="line-numbers" >
+<pre class="line-numbers"><code class="language-java">
 } catch(Exception e) {
   //예외가 가지고 있는 Message 얻기
   String message = e.getMessage();
@@ -273,7 +273,7 @@ throw new XXXException("예외 메시지");
   //예외의 발생 경로를 추적
   e.printStackTrace();
 }
-</pre>
+</code></pre>
 
 
 printStackTrace()는 메소드 이름에서도 알 수 있듯이 예외 발생 코드를 추적해서 모두 콘솔에 출력한다. 어떤 예외가 어디에서 발생했는지 상세하게 출력해주기 때문에 프로그램을 테스트하면서 오류를 찾을 때 활용된다.
@@ -282,7 +282,7 @@ printStackTrace()는 메소드 이름에서도 알 수 있듯이 예외 발생 �
 
 
 <a name="AccountPro"></a>
-<pre class="line-numbers" >
+<pre class="line-numbers"><code class="language-java">
 class Account {
 	private long balance;
 
@@ -335,7 +335,7 @@ public class AccountExample {
 
 }
 
-</pre>
+</code></pre>
 
 
 
@@ -354,14 +354,14 @@ public class AccountExample {
 사용자 정의 예외 클래스는 컴파일러가 체크하는 일반 예외로 선언할 수도 있고, 컴파일러가 체크하지 않는 실행 예외로 선언할 수도 있다. **일반 예외** 로 선언할 경우 Exception을 상속하면 되고, **실행 예외** 로 선언할 경우에는 RuntimeException을 상속하면 된다.
 
 
-<pre class="line-numbers" >
+<pre class="line-numbers"><code class="language-java">
 public class XXXException extends [ Exception | RuntimeException ] {
   public XXXException() { }
   public XXXException(String message) {
     super(message);
   }
 }
-</pre>
+</code></pre>
 
 
 
