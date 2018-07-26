@@ -340,6 +340,107 @@ public class 구현클래스명 implements 인터페이스A, 인터페이스B {
 
 
 <pre class="line-numbers"><code class="language-java">
-public interfaceSearchable {
+public interface Searchable {
   void search(String url);
 }
+</code></pre>
+
+
+
+
+<pre class="line-numbers"><code class="language-java">
+public class SmartTelevision implements RemoteControl, Searchable {
+  private int volume;
+
+  public void turnOn() {
+    System.out.println("TV를 켭니다.");
+  }
+  public void turnOff() {
+    System.out.println("TV를 끕니다.");
+  }
+  public void setVolume(int volume) {
+    if(volume > RemoteControl.MAX_VOLUME) {
+      this.volume = RemoteControl.MAX_VOLUME;
+    } else if(volume < RemoteControl.MIN_VOLUME) {
+      this.volume = RemoteControl.MIN_VOLUME;
+    } else {
+      this.volume = volume;
+    }
+    System.out.println("현재 TV 볼륨: " + volume);
+  }
+
+  public void search(String url){
+    System.out.println(url + "을 검색합니다.");
+  }
+}
+</code></pre>
+
+
+
+
+### 인터페이스 사용
+
+
+인터페이스로 구현 객체를 사용하려면 다음과 같이 인터페이스 변수를 선언하고 구현 객체를 대입해야 한다. 인터페이스 변수는 참조타입이기 때문에 구현 객체가 대입될 경우 구현 객체의 번지를 저장한다.
+<pre class="line-numbers"><code class="language-java">
+RemoteControl rc;
+rc = new Television();
+rc = new Audio();
+</code></pre>
+
+
+개발 코드에서 인터페이스는 클래스의 필드, 생성자 또는 메소드의 매개 변수, 생성자 또는 메소드의 로컬 변수로 선언될 수 있다.
+
+<pre class="line-numbers"><code class="language-java">
+public class MyClass {
+  //필드
+  RemoteControl rc = new Television();
+
+  //생성자
+  MyClass(RemoteControl rc) {
+    this.rc = rc;
+  }
+
+  //메소드
+  void methodA() {
+    //로컬 변수
+    RemoteControl rc = new Audio();
+  }
+
+  void methodB(RemoteControl rc) { ... }
+}
+</code></pre>
+
+
+
+
+
+### 추상 메소드 사용
+
+
+구현 객체가 인터페이스 타입에 대입되면 인터페이스에 선언된 추상 메소드를 개발 코드에서 호출할 수 있게 된다.
+
+
+
+<pre class="line-numbers"><code class="language-java">
+public class RemoteControlExample {
+  public static void main(String[] args) {
+
+    RemoteControl rc = null;      //인터페이스 변수 선언
+
+    rc = new Television();        //Television 객체를 인터페이스 타입에 대입
+    rc.turnOn();                  //인터페이스의 turnOn(), turnOff() 호출
+    rc.turnOff();
+
+    rc = new Audio();             //Audio 객체를 인터페이스 타입에 대입
+    rc.turnOn();                  //인터페이스의 turnOn(), turnOff() 호출
+    rc.turnOff();
+
+  }
+}
+</code></pre>
+
+
+
+
+### 디폴트 메소드 사용
