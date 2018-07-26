@@ -46,7 +46,7 @@ public class nullexception {
 }
 ```
 
-![null](/asset/img/nullexception.JPG)
+![null](/assets/img/nullexception.JPG)
 
 6번째 줄에서 data 변수는 null 값을 가지고 있기 떄문에 String 객체를 참조하고 있지 않다. 하지만 그 다음 줄에서 String 객체의 toString()메소드를 호출하고 있다. 여기서 NullPointerException이 발생한다.
 
@@ -69,7 +69,7 @@ public class ArrayIndexOutOfBoundsExceptionExample {
 }
 ```
 
-![null](/asset/img/arrayindexexception.JPG)
+![null](/assets/img/arrayindexexception.JPG)
 
 배열의 개수가 2개인 정수형 배열 a를 생성하였다. 하지만 위 코드에서는 3개의 배열에 각각 값을 초기화하였다. 이런 경우 ArrayIndexOutOfBoundsException 실행 예외가 발생한다. 인덱스가 0부터 시작하므로 배열 a는 a[0], a[1]까지 생성되지만 a[2]에도 값을 초기화해줘서 에러가 난거다.
 
@@ -102,7 +102,7 @@ class Dog extends Animal { }
 class Cat extends Animal { }
 ```
 
-![null](/asset/img/classcastexception.JPG)
+![null](/assets/img/classcastexception.JPG)
 
 예제를 실행하면 14라인에서 ClassCastException이 발생한다. 그 이유는 9번째 줄에서 Cat객체를 매개값으로 주었기 때문에 Dog타입으로 변환할 수 없다. 이렇게 잘못된 매개값이 들어올 수 있기 때문에 타입 변환 전에 타입 변환이 가능한지 instanceof연산자로 확인하는 것이 좋다. instanceof 연산의 결과가 true이면 좌항 객체를 우항 타입으로 변환 가능하다는 뜻이다.
 ```java
@@ -115,12 +115,15 @@ if(animal instanceof Dog) {
 ```
 
 
+
+
+
 ## 예외 처리 코드
 프로그램에서 예외가 발생했을 경우 프로그램의 갑작스러운 종료를 막고, 정상 실행을 유지할 수 있도록 처리하는 코드
 
 예외처리 코드는 try-catch-finally 블록을 이용한다. try-catch-finally 블록은 생성자 내부와 메소드 내부에서 작성되어 일반 예외와 실행 예외가 발생할 경우 예외 처리를 할 수 있도록 해준다.
 
-![try-catch-finally](/asset/img/exception_algorithm.JPG)
+![try-catch-finally](/assets/img/exception_algorithm.JPG)
 
 
 try 블록에는 예외 발생 가능 코드가 위치한다. try 블록의 코드가 예외 발생 없이 정상 실행되면 catch 블록의 코드는 실행되지 않고 finally 블록의 코드를 실행한다. 만약 try 블록의 코드에서 예외가 발생하면 **즉시 실행을 멈추고** catch블록으로 이동하여 예외 처리 코드를 실행한다. 그리고 finally 블록의 코드를 실행한다. *finally 블록은 옵션으로 생략 가능하다.*
@@ -137,9 +140,9 @@ public class TryCatchFinallyExample {
 }
 ```
 
-위 예제를 실행시키면 4라인에서 ClassNotFoundException이 발생하는데, 이것은 java.lang.String2 클래스가 존재하지 않기 때문이다. 4라인에서 예외가 발생하면 5라인을 실행해서 예외 처리를 하게 된다. <a href="#arrayException" class="scroll">ArrayIndexOutOfBoundsException</a>이나 <a href="#nullException" class="scroll">NullPointerException</a>,<a href="#classException" class="scroll">ClassCastException</a>과 같은 실행 예외는 컴파일러가 예외 처리 코드를 체크하지 않기 때문에 이클립스에서도 빨간 밑줄이 생기지 않는다.
+위 예제를 실행시키면 4라인에서 ClassNotFoundException이 발생하는데, 이것은 java.lang.String2 클래스가 존재하지 않기 때문이다. 4라인에서 예외가 발생하면 5라인을 실행해서 예외 처리를 하게 된다. <a href="#arrayException" class="scroll">ArrayIndexOutOfBoundsException</a>이나 <a href="#nullException" class="scroll">NullPointerException</a>, <a href="#classException" class="scroll">ClassCastException</a>과 같은 실행 예외는 컴파일러가 예외 처리 코드를 체크하지 않기 때문에 이클립스에서도 빨간 밑줄이 생기지 않는다.
 
-![try-catch-finally_example](/asset/img/trycatch_example.JPG)
+![try-catch-finally_example](/assets/img/trycatch_example.JPG)
 
 
 
@@ -174,12 +177,14 @@ public class CatchByExceptionKindExample {
 }
 ```
 
-![catchbyexception](/asset/img/catchbyexception.JPG)
+![catchbyexception](/assets/img/catchbyexception.JPG)
 
 
-![catchbyexception](/asset/img/catchbyexception2.JPG)
+![catchbyexception](/assets/img/catchbyexception2.JPG)
 
 4번째 줄과 5번째 줄에서 ArrayIndexOutOfBoundsException이 발생한다면 11~13번째 줄이 실행되고, 6번째 줄과 7번째 줄에서 NumberFormatException이 발생한다면 15번째 줄이 실행된다. 17번째 줄은 예외 발생 여부와 상관없이 실행된다. 만약 16번째 줄이 첫 번째 catch로 들어갔다면 잘못된 코딩이다. Exception은 ArrayIndexOutOfBoundsException이나 NumberFormatException의 상위 예외 클래스이기 때문에 첫 번째 catch블록만 선택되어 시리행되고 두 번째 catch블록은 어떤 경우에라도 실행 되지 않는다.
+
+
 
 
 
@@ -207,7 +212,11 @@ public class CatchByExceptionKindExample {
 ```
 
 
-![multicatch](/asset/img/multicatch.JPG)
+![multicatch](/assets/img/multicatch.JPG)
+
+
+
+
 
 
 ### 예외 떠넘기기
@@ -237,10 +246,12 @@ public class ThrowsExample {
 ```
 
 
-![throw](/asset/img/throwsexample.JPG)
+![throw](/assets/img/throwsexample.JPG)
 
 
 main() 메소드에서도 throws 키워드를 사용해서 예외를 떠넘길 수 있는데, main() 메소드에서 throws Exception을 붙이는 것은 좋지 못한 예외 처리 방법이다. 프로그램 사용자는 프로그램이 알 수 없는 예외 내용을 출력하고 종료되는 것을 좋아하지 않는다. 그렇기 때문에 main()에서 try-catch 블록으로 예외를 최종 처리하는 것이 바람직하다.
+
+
 
 
 ### 예외 정보 얻기
@@ -328,7 +339,7 @@ public class AccountExample {
 
 
 
-![accountexample](/asset/img/accountexception.JPG)
+![accountexample](/assets/img/accountexception.JPG)
 
 
 
