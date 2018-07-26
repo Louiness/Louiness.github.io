@@ -5,15 +5,15 @@ tags: [자바, 자바 꿀팁,자바 tip, 자바 기본, 이클립스, 이클립�
 category: java
 ---
 **new생성자를 통한 객체 선언**
-```java
+<pre class="prttyprint">
 NewObject obj = new NewObject();
-```
+</pre>
 
 
 **getInstance메서드로 객체 선언**
-```java
+<pre class="prttyprint">
 NewObject obj = NewObject.getInstance();
-```
+</pre>
 
 
 생성자를 통한 객체 선언은 **일반적**인 경우
