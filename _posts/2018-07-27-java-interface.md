@@ -216,3 +216,77 @@ public class 구현클래스명 implements 인터페이스명 {
 
 
 다음은 Television과 Audio라는 이름을 가지고 있는 RemoteControl 구현 클래스를 작성하는 방법을 보여준다. 클래스 선언부 끝에 implements RemoteControl이 붙어 있기 때문에 이 두 클래스는 RemoteControl 인터페이스로 사용이 가능하다. RemoteControl에는 3개의 추상 메소드가 있기 때문에 Television과 Audio는 이 추상 메소드들에 대한 실체 메소드를 가지고 있어야 한다.
+<pre class="prttyprint" name="Television.java">
+public class Television implements RemoteControl {
+	//필드
+	private int volume;
+
+	//turnOn() 추상 메소드의 실체 메소드
+	public void turnOn() {
+		System.out.println("TV를 켭니다.");
+	}
+
+	//turnOff() 추상 메소드의 실제 메소드
+	public void turnOff() {
+		System.out.println("TV를 끕니다.");
+	}
+
+	//setVolume() 추상 메소드의 실체 메소드
+	public void setVolume(int volume) {
+
+		if(volume > RemoteControl.MAX_VOLUME)
+			this.volume = RemoteControl.MAX_VOLUME;
+
+		else if(volume < RemoteControl.MIN_VOLUME)
+			this.volume = RemoteControl.MIN_VOLUME;
+
+		else this.volume = volume;
+
+		System.out.println("현재 TV 볼륨 : " + volume);
+	}
+
+}
+</pre>
+
+
+<pre class="prttyprint" name="Audio.java">
+public class Audio implements RemoteControl{
+	//필드
+	 private int volume;
+
+	@Override
+	public void turnOn() {
+		System.out.println("Audio를 켭니다.");
+	}
+
+	@Override
+	public void turnOff() {
+		System.out.println("Audio를 끕니다.");
+	}
+
+	@Override
+	public void setVolume(int volume) {
+		if(volume > RemoteControl.MAX_VOLUME) this.volume = RemoteControl.MAX_VOLUME;
+		else if(volume < RemoteControl.MIN_VOLUME) this.volume = RemoteControl.MIN_VOLUME;
+		else this.volume = volume;
+
+		System.out.println("현재 Audio 볼륨 : " + volume);
+
+	}
+
+}
+</pre>
+
+
+
+<pre class="prttyprint" name="RemoteControlExample.java">
+public class RemoteControlExample {
+
+	public static void main(String[] args) {
+		RemoteControl rc;
+		rc = new Television();
+		rc = new Audio();
+	}
+
+}
+</pre>
