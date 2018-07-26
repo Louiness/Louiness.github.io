@@ -27,6 +27,6 @@ NewObject obj = NewObject.getInstance();
 
 
 **요약**
-  
+
 new : 객체를 계속 만들 수 있다.
 getInstance() : 싱글톤 패턴, 하나의 인스턴스만 가지고 공유해서 쓴다.

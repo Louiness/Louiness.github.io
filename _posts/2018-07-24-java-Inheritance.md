@@ -144,4 +144,6 @@ public class Airplane {
 상속할 수 없는 final 클래스
   ==>자식 클래스 만들지 못하도록 final 클래스로 생성
 
+
+  
 참조 : 이것이 자바다(한빛미디어)
