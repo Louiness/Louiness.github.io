@@ -18,7 +18,7 @@ function handleKeyPress(e) {
 }
 
 function handleSubmit() {
-    window.open('https://www.google.com/search?q=site:' + window.location.hostname + ' ' + currentSearchTerm);
+    window.open('https://www.google.com/search?q=' + currentSearchTerm);
 }
 
 jQuery(document).ready(function($) {
@@ -27,4 +27,4 @@ jQuery(document).ready(function($) {
     $('html,body').animate({
       scrollTop:$(this.hash).offset().top}, 500);
     });
-  }); 
+  });
