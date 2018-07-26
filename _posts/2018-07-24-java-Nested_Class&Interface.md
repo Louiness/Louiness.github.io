@@ -10,7 +10,7 @@ category: java
   * 두 클래스의 멤버들을 서로 쉽게 접근할 수 있다
   * 외부의 불필요한 관계 클래스를 감춤으로써 코드의 복잡성을 줄일 수 있다
 
-<pre class="prttyprint">
+<pre class="line-numbers" >
 //중첩 클래스의 코드 형태
 class ClassName{
   class NestdClassName{ }
@@ -19,7 +19,7 @@ class ClassName{
 
 인터페이스도 클래스 내부에 선언할 수 있다. 이런 인터페이스를 **중첩 인터페이스** 라고 한다.
 인터페이스를 클래스 내부에 선언하는 이유는 해당 클래스와 긴밀한 관계를 맺는 구현 클래스를 만들기 위해서이다.
-<pre class="prttyprint">
+<pre class="line-numbers" >
 class ClassName{
   interface NestedInterfaceName{ }
 }

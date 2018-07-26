@@ -10,7 +10,7 @@ category: java
 자식이 부모를 선택해 물려받음
 상속 대상: 부모의 필드와 메소드
 
-<pre class="prttyprint">
+<pre class="line-numbers" >
 public class B extends A{
 	String field2;
 void method2() { ...}
@@ -27,7 +27,7 @@ void method2() { ...}
   - 부모 클래스가 다른 패키지에 있을 경우, default접근 갖는 필드와 메소드도 제외
 
 ### Class casting
-<pre class="prttyprint">
+<pre class="line-numbers" >
 package hasu;
 //부모 클래스
 public class E028Car {
@@ -39,7 +39,7 @@ public class E028Car {
 </pre>
 
 ---
-<pre class="prttyprint">
+<pre class="line-numbers" >
 package hasu;
 //자식 클래스
 public class E028Bus extends E028Car {
@@ -49,7 +49,7 @@ public class E028Bus extends E028Car {
 </pre>
 
 ---
-<pre class="prttyprint">
+<pre class="line-numbers" >
 package hasu;
 
 public class E028Case1 {
@@ -107,7 +107,7 @@ class 자식클래스 extends 부모클래스 1, ~~부모클래스 2~~{
   - 새로운 예외(Exception) throws 불가
 
 ex)
-<pre class="prttyprint">
+<pre class="line-numbers" >
 package inherit;
 //부모 클래스
 public class Airplane {
@@ -116,7 +116,7 @@ public class Airplane {
 	public void takeOff() { System.out.println("이륙합니다."); }
 }
 </pre>
-<pre class="prttyprint">
+<pre class="line-numbers" >
 	package inherit;
 	//자식 클래스
 	public class SupersonicAirplane extends Airplane {

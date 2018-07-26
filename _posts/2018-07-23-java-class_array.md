@@ -7,7 +7,7 @@ category: java
 ### 객체 배열(클래스 배열) : 객체에 대한 레퍼런스를 원소로 갖는 배열
 
 **Studnet 클래스**
-<pre class="prttyprint">
+<pre class="line-numbers">
 public class Student {
 	private String name;
 	private int ssn;
@@ -27,7 +27,7 @@ public class Student {
 </pre>
 
 **Student Main클래스**
-<pre class="prttyprint">
+<pre class="line-numbers">
 import java.util.Arrays;
 
 public class StudentLexiMain {
