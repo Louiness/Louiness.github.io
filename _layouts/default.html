@@ -5,9 +5,11 @@
 
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
   <!-- Top 버튼 -->
-  <div style="display:scroll; position:fixed; bottom:5px; right:5px;">
+  {% if content == post %}
+  <div style="display:scroll; position:fixed; bottom:15px; right:15px;">
   <a onclick="go_top();" title="Top"><img src="/assets/img/upScroll.png"></a>
   </div>
+  {% endif %}
   <!-- Top 버튼 -->
     <div class="page-wrap">
         {% include header.html %}
