@@ -59,5 +59,9 @@ public class StudentLexiMain {
 ```
 
 실행시킨 결과는 다음과 같다.
-  
+
 ![array](/assets/img/object_array.JPG)
+
+
+
+참조 : 이것이 자바다(한빛미디어)
