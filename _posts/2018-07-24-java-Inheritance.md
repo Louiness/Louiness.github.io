@@ -69,7 +69,7 @@ public class E028Case1 {
 
 		car2.show();
 		System.out.println(car2.speed);
-		//car2.move();			X
+		//car2.move();									X
 		E028Bus buc1 = (E028Bus)car2;		//E028Bus클래스로 car2를 강제 변환
 		bus1.move();
 		E028Car car0 = buc1;						//E028Car클래스의 주소를 받고있는 car0에 buc1의 주소값을 할당받음
