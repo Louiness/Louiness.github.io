@@ -37,17 +37,17 @@ class ClassName{
 <tr>
 <td rowspan = "2">멤버클래스</td>
 <td>인스턴스 멤버 클래스</td>
-<td><pre>class A{<br>    class B { ... }<br>}```</td>
+<td><pre>class A{<br>    class B { ... }<br>}</pre></td>
 <td>A 객체를 생성해야만 사용할 수 있는 B 중첩 클래스</td>
 </tr>
 <tr>
 <td>정적 멤버 클래스</td>
-<td><pre>class A{<br>    static class B { ... }<br>}```</td>
+<td><pre>class A{<br>    static class B { ... }<br>}</pre></td>
 <td>A 클래스로 바로 접근할 수 있는 B 중첩 클래스</td>
 </tr>
 <tr>
 <td colspan = "2">로컬 클래스</td>
-<td><pre>class A{<br>    void method(){<br>    class B { ... }<br>    }<br>}```</td>
+<td><pre>class A{<br>    void method(){<br>    class B { ... }<br>    }<br>}</pre></td>
 <td>method()가 실행할 때만 사용할 수 있는 B 중첩 클래스</td>
 </tr>
 </table>

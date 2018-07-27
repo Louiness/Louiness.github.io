@@ -55,7 +55,7 @@ public class nullexception {
 ### 2. ArrayIndexOutOfBoundsException
 배열에서 인덱스 범위를 초과하여 사용할 경우 발생하는 실행 예외
 
-<pre class="line-numbers" ><code class="language-java">
+```java
 package test;
 
 public class ArrayIndexOutOfBoundsExceptionExample {
@@ -229,7 +229,7 @@ public class CatchByExceptionKindExample {
 
 
 throws 키워드가 붙어있는 메소드는 반드시 try 블록 내에서 호출되어야 한다. 그리고 catch 블록에서 떠넘겨 받은 예외를 처리해야 한다.
-<pre class="line-numbers" >
+```java
 public class ThrowsExample {
   public static void main(String[] args) {
 	  try {
