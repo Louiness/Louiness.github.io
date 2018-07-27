@@ -119,7 +119,7 @@ public interface RemoteControl {
 
 ## 디폴트 메소드 선언
 ---
-<pre class="prttyprint">
+```java
 [ public ] default 리턴타입 메소드명(매개변수, ...) { ... }
 ```
 
@@ -216,7 +216,7 @@ public class 구현클래스명 implements 인터페이스명 {
 
 
 다음은 Television과 Audio라는 이름을 가지고 있는 RemoteControl 구현 클래스를 작성하는 방법을 보여준다. 클래스 선언부 끝에 implements RemoteControl이 붙어 있기 때문에 이 두 클래스는 RemoteControl 인터페이스로 사용이 가능하다. RemoteControl에는 3개의 추상 메소드가 있기 때문에 Television과 Audio는 이 추상 메소드들에 대한 실체 메소드를 가지고 있어야 한다.
-<pre class="line-numbers" name="Television.java"><code class="language-java">
+```java
 public class Television implements RemoteControl {
 	//필드
 	private int volume;
@@ -249,7 +249,7 @@ public class Television implements RemoteControl {
 ```
 
 
-<pre class="line-numbers" name="Audio.java"><code class="language-java">
+```java
 public class Audio implements RemoteControl{
 	//필드
 	 private int volume;
@@ -279,7 +279,7 @@ public class Audio implements RemoteControl{
 
 
 
-<pre class="line-numbers" name="RemoteControlExample.java"><code class="language-java">
+```java
 public class RemoteControlExample {
 
 	public static void main(String[] args) {
