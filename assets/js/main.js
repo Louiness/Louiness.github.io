@@ -1,3 +1,4 @@
+//let : 변수 재선언 불가능
 let currentSearchTerm = '';
 
 onload = function () {

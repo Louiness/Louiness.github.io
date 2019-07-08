@@ -26,13 +26,16 @@
                         Python
                     </a>
                     <div class="right menu">
+                      {% if page.layout != "front" %}
                         <div id="head-search" class="ui category search item">
                             <div class="ui transparent icon input">
+                              <form action="{{ page.url | relative_url }}">
                                 <input placeholder="Search..." type="text" id="search-input" onkeypress="handleKeyPress()">
                                 <i class="search link icon" onclick="handleSubmit()"></i>
+                              </form>
                             </div>
                         </div>
-
+                        {% endif %}
                         <a class="item" href="https://github.com/Louiness">
                             <i class="github link icon"></i>
                         </a>
