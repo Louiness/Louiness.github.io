@@ -16,10 +16,11 @@ title: Java
                     <!-- {% if post.category %}
                         in <i>{{ post.category }}</i>
                     {% endif %} -->
+
                 </small>
             </a>
             {{ post.content | strip_html | truncatewords: 30 }}
         </div>
+        {% endif %}
     </div>
-
 {% endfor %}
