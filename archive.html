@@ -8,7 +8,6 @@ title: Archive
     <div class="ui middle aligned selection list">
         <div class="item">
             <a class="header" href="{{ BASE_PATH }}{{ post.url }}">
-              {% if site.categories == 'java' %}
               <!-- strip_html : 모든 HTML 태그를 문자열로부터 제거 -->
                 {{ post.title | strip_html | truncatewords: 15 }}
                 <small class="small-date">
@@ -20,7 +19,6 @@ title: Archive
             </a>
             {{ post.content | strip_html | truncatewords: 30 }}
         </div>
-        {% endif %}
     </div>
 
 {% endfor %}
