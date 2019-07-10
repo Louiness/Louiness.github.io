@@ -6,7 +6,7 @@ title: Java
 {% for post in site.posts %}
 
     <div class="ui middle aligned selection list">
-        {% if site.category == 'java' %}
+        {% if page.categories == 'java' %}
         <div class="item">
             <a class="header" href="{{ BASE_PATH }}{{ post.url }}">
               <!-- strip_html : 모든 HTML 태그를 문자열로부터 제거 -->
