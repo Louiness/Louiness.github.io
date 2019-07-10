@@ -6,6 +6,7 @@ title: Java
 {% for post in site.posts %}
 
     <div class="ui middle aligned selection list">
+        {% if site.category == 'java' %}
         <div class="item">
             <a class="header" href="{{ BASE_PATH }}{{ post.url }}">
               <!-- strip_html : 모든 HTML 태그를 문자열로부터 제거 -->
@@ -19,6 +20,7 @@ title: Java
             </a>
             {{ post.content | strip_html | truncatewords: 30 }}
         </div>
+        {% endif %}
     </div>
 
 {% endfor %}
